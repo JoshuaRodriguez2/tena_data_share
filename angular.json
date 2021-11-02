@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "TenaWebsite": {
+    "TenaDataShare": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -32,7 +32,9 @@
               }
             ],
             "styles": [
-              "src/styles.scss","node_modules/bootstrap/dist/css/bootstrap.min.css"
+              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
+              "src/styles.scss",
+              "node_modules/bootstrap/dist/css/bootstrap.min.css"
             ],
             "scripts": [],
             "showCircularDependencies": false
@@ -79,25 +81,25 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "TenaWebsite:build"
+            "browserTarget": "TenaDataShare:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "TenaWebsite:build:production"
+              "browserTarget": "TenaDataShare:build:production"
             },
             "hmr": {
               "hmr": true,
-              "browserTarget": "TenaWebsite:build:hmr"
+              "browserTarget": "TenaDataShare:build:hmr"
             },
             "ec": {
-              "browserTarget": "TenaWebsite:build:ec"
+              "browserTarget": "TenaDataShare:build:ec"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "TenaWebsite:build"
+            "browserTarget": "TenaDataShare:build"
           }
         },
         "test": {
@@ -112,6 +114,7 @@
               "src/assets"
             ],
             "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
               "src/styles.scss"
             ],
             "scripts": []
@@ -134,19 +137,19 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "TenaWebsite:serve"
+            "devServerTarget": "TenaDataShare:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "TenaWebsite:serve:production"
+              "devServerTarget": "TenaDataShare:serve:production"
             }
           }
         }
       }
     }
   },
-  "defaultProject": "TenaWebsite",
+  "defaultProject": "TenaDataShare",
   "cli": {
-    "analytics": "7c2445e4-8084-4235-804b-281be7d2960a"
+    "analytics": false
   }
 }

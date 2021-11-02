@@ -1,3 +1,4 @@
+import { JsonpClientBackend } from '@angular/common/http';
 import {Component} from '@angular/core';
 
 @Component({
@@ -5,5 +6,5 @@ import {Component} from '@angular/core';
   templateUrl: './main.component.html',
   styleUrls: ['./main.component.scss']
 })
-export class MainComponent { }
-
+export class MainComponent {
+ }
