@@ -1,14 +1,20 @@
 <style>
     @import url('https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@300;700&display=swap');
-    </style>
-<div class="full-width" style="background-image: url('assets/b2.png');background-repeat: no-repeat;background-size:cover;" fxLayoutAlign="center center">
+</style>
+<div class="full-width"
+    style="background-image: url('assets/b2.png');background-repeat: no-repeat;background-size:cover;"
+    fxLayoutAlign="center center">
 
-    <div mat-card id="login-form" class="mat-elevation-z10" style="box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);">
+    <div mat-card id="login-form" class="mat-elevation-z10" style="box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);"
+        *ngIf="isNotWideScreenContact$ | async">
 
         <div fxFlex=25 fxLayoutAlign="center center" fxLayout="column">
-            <div style="position: relative;left: 12.5%;">
+            <div style="position: relative;" fxLayout="column">
+                <h1 style="text-align: left;font-weight:900;font-style: italic;font-size:50px;">
+                    DATA
+                </h1>
                 <h1 style="text-align: left;font-weight:900;font-style: italic;font-size: 50px;">
-                    DATA SHARING
+                    SHARING
                 </h1>
             </div>
             <div style="position: relative;left: 13%;">
@@ -29,11 +35,54 @@
                 <button mat-button class="option_button" style="border-radius: 25px;">Basic</button>
                 <button mat-button class="option_button" style="border-radius: 25px;">Basic</button>
                 <button mat-button class="option_button" style="border-radius: 25px;">Basic</button>
-                
+
             </div>
             <div fxLayoutAlign="end end" style="position: relative;top: 10%;left:9%;">
                 <img style="width:90%;min-width:300px" src="assets/data.png">
             </div>
+        </div>
+
+
+
+
+    </div>
+
+
+    <!--SWITCH CASE FOR MOBILE OPTIMIZATION-->
+    <div mat-card id="login-form" class="mat-elevation-z10" style="box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);"
+        fxLayout="column" *ngIf="isWideScreenContact$ | async">
+        <div fxFlex=75 fxLayout="column" fxLayoutGap=45px>
+            <div fxLayout="row" fxLayoutGap="20px" fxLayoutAlign="end center">
+                <button mat-button class="option_button" style="border-radius: 25px;">Basic</button>
+                <button mat-button class="option_button" style="border-radius: 25px;">Basic</button>
+                <button mat-button class="option_button" style="border-radius: 25px;">Basic</button>
+                <button mat-button class="option_button" style="border-radius: 25px;">Basic</button>
+                <button mat-button class="option_button" style="border-radius: 25px;">Basic</button>
+
+            </div>
+            <div fxFlex=25 fxLayoutGap=35px fxLayoutAlign="center center" fxLayout="column">
+                <div style="position: relative;" fxLayout="column">
+                    <h1 style="text-align: center;font-weight:900;font-style: italic;font-size:50px;">
+                        DATA
+                    </h1>
+                    <h1 style="text-align: center;font-weight:900;font-style: italic;font-size: 50px;">
+                        SHARING
+                    </h1>
+                </div>
+                <div style="position: relative;width:75%;">
+                    <p style="font-size: medium; text-align: center;">
+                        Reduce the amount of time a document needs to be entered and from start to finish it can be
+                        moved
+                        through our system.
+                    </p>
+                </div>
+                <div fxLayoutGap="20px" fxLayout="row">
+                    <button mat-raised-button class="Sign_up">Sign Up</button>
+                    <button mat-raised-button class="Contact_us">Contact Us</button>
+                </div>
+            </div>
+
+
         </div>
 
 
